@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         useMaterial3: true,
       ),
-      home: const DashBoardScreen(),
+      home:  DashBoardScreen(),
     );
 
     }, maximumSize:  Size(context.widthScreen,context.heightScreen), enabled: kIsWeb,);

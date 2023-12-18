@@ -115,7 +115,7 @@ class _SignUpFormState extends State<SignUpForm> {
               ),
               onPressed: ()=> 
               _formProgress ==1 ?
-              Navigator.push(context, MaterialPageRoute(builder: (s)=>const DashBoardScreen() )) : null ,
+              Navigator.push(context, MaterialPageRoute(builder: (s)=> DashBoardScreen() )) : null ,
               child: const Text('Sign up'),
             ),
           ),

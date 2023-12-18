@@ -3,8 +3,19 @@ import 'package:store_web_app/screens/dashboard/widgets/custom_row.dart';
 import 'package:store_web_app/utils/plugin/query_plugin.dart';
 
 class DashBoardScreen extends StatelessWidget {
-  const DashBoardScreen({super.key});
-
+   DashBoardScreen({super.key});
+    final List typesName = [
+      'Profile', 
+      'Dashboard',
+      'Products',
+      'Customer',
+    ];
+    final List typeIcons = [
+      Icons.person,
+      Icons.dashboard_outlined,
+      Icons.indeterminate_check_box,
+      Icons.people_outline_sharp
+    ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,12 +29,11 @@ class DashBoardScreen extends StatelessWidget {
                 children: [
                   Center(child: Text("Store", style: Theme.of(context).textTheme.headlineMedium,),),
                   boxSizeHeight(context, 21),
-                  const CustomRowDashBoard(typeName: "Profile", icon: Icons.person,),
-                  const CustomRowDashBoard(typeName: "Profile", icon: Icons.person,),
-                  const CustomRowDashBoard(typeName: "Profile", icon: Icons.person,),
-                  const CustomRowDashBoard(typeName: "Profile", icon: Icons.person,),
-                  const CustomRowDashBoard(typeName: "Profile", icon: Icons.person,),
-                  const CustomRowDashBoard(typeName: "Profile", icon: Icons.person,),
+                  Expanded(
+                    child: ListView.builder(itemBuilder: (context , index){
+                      return CustomRowDashBoard(icon: typeIcons[index], typeName:typesName[index]);
+                    }),
+                  )
                 ],
               ),
             ),
